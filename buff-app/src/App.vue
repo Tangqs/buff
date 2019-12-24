@@ -1,25 +1,33 @@
 <template>
   <div id="app">
-    <h1>haha</h1>
-    <img src="./assets/logo.png">
-    <!--路由展示-->
-    l
+    <h1>似乎懂了</h1>
+    <!--路由动态展示-->
+    <router-view/>
+    <bottom :lists2="lists2" />
   </div>
 </template>
 
 <script>
+import bottom from "./components/bottom.vue"
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return {
+        lists2:[
+          {name:"home2",url:"/home"},
+          {name:"about2",url:"/about"},
+          {name:"us2",url:"/us"},
+          {name:"my2",url:"/my"}
+        ]
+      }
+  },
+  components:{
+    bottom
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "assets/css/base.css"
 </style>
+
